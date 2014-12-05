@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <title>seed-element</title>
+
+  <script src="../bower_components/web-component-tester/browser.js"></script>
+
+  <link rel="import" href="../content-editable.html">
+</head>
+<body>
+
+  <div id="container">
+    <content-editable id="editable-p">
+      <p>inside paragraph</p>
+    </content-editable>
+  </div>
+
+  <content-editable id="editable-a" tooltip="I am editable">
+    <a>a link</a>
+  </content-editable>
+
+  <script>
+    var container = document.querySelector('#container');
+    var editableP = document.querySelector('#editable-p');
+    var editableA = document.querySelector('#editable-a');
+
+    suite('<content-editable>', function () {
+      document.addEventListener('polymer-ready', function () {
+        var p = editableP.shadowRoot.querySelector('p').parentNode;
+        var a = editableA.shadowRoot.querySelector('a').parentNode;
+
+        test('wraps element in div and adds contenteditable', function () {
+          assert.equal(p.getAttribute('contenteditable'), 'true');
+        });
+
+        test('fires changed event on blur', function (done) {
+          container.addEventListener('content-editable-changed', function (event) {
+            assert.equal(event.detail.text, 'inside paragraph');
+            done();
+          });
+
+          p.focus();
+          p.blur();
+        });
+
+        suite('tooltip', function () {
+          test('add with default text', function () {
+            assert.equal(p.getAttribute('title'), 'Click to edit');
+          });
+
+          test('add from tooltip attribute', function () {
+            assert.equal(a.getAttribute('title'), 'I am editable');
+          });
+        });
+        
+      });
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,22 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+
+<!--
+Element making children editable and triggers save event on blur.
+
+##### Example
+
+    <content-editable></content-editable>
+
+@element content-editable
+@blurb Element making children editable and triggers save event on blur.
+@status alpha
+@homepage http://github.com/mikaelharsjo/content-editable
+-->
+<polymer-element name="content-editable" attributes="tooltip">
+  <template>
+    <link rel="stylesheet" href="content-editable.css">
+    <div title="{{tooltip}}" contenteditable="true" on-blur="{{blur}}" id="editable"></div>
+    <content id="mycontent"></content>
+  </template>
+  <script src="content-editable.js"></script>
+</polymer-element>
