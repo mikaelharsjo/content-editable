@@ -7,7 +7,8 @@ Custom element making children editable and triggers save event on blur, built w
 ```html
 <content-editable>
   <h1>I am an editable heading</h1>
-</content-editable>```
+</content-editable>
+```
 
 ## Contributing
 
