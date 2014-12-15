@@ -1,6 +1,13 @@
 Polymer({
+  /**
+  * The `tooltip` attribute sets the text of a toltip.
+  *
+  * @attribute tooltip
+  * @type string
+  * @default 'Click to edit'
+  */
+  tooltip: 'Click to edit',
   ready: function() { //attached?
-    this.tooltip = this.tooltip || 'Click to edit';
     var root = this.$;
     // move content from light dom to shadow root
     var nodes = root.mycontent.getDistributedNodes();
