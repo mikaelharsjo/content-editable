@@ -3,6 +3,11 @@ content-editable
 
 Custom element making children editable and triggers save event on blur, built with [Polymer](https://www.polymer-project.org/).
 
+See the [component page](http://mikaelharsjo.github.io/content-editable/components/content-editable/) for more information.
+
+
+
+
 ## Example
 ```html
 <content-editable>
@@ -21,10 +26,11 @@ python -m SimpleHTTPServer
 Or other method using NodeJS:
 
 ```sh
-http-server ./
+npm install -g http-server
+http-server ./ -p 8000
 ```
 
-This starts a web server on port 8000, so you can test your new element by navigating a browser to `localhost:8000/test/index.html`.
+This starts a web server on port 8000, so you can try the element by navigating a browser to `localhost:8000/test/index.html`.
 
 ### web-component-tester
 
