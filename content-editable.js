@@ -1,11 +1,4 @@
 Polymer({
-  /**
-  * The `tooltip` attribute sets the text of a toltip.
-  *
-  * @attribute tooltip
-  * @type string
-  * @default 'Click to edit'
-  */
   tooltip: 'Click to edit',
   ready: function() { //attached?
     var root = this.$;

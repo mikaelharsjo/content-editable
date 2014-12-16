@@ -9,8 +9,8 @@ Element making children editable and triggers save event on blur.
 
 @element content-editable
 @blurb Element making children editable and triggers save event on blur.
-@status alpha
 @homepage http://github.com/mikaelharsjo/content-editable
+
 -->
 <polymer-element name="content-editable" attributes="tooltip">
   <template>
@@ -18,5 +18,22 @@ Element making children editable and triggers save event on blur.
     <div title="{{tooltip}}" contenteditable="true" on-blur="{{blur}}" id="editable"></div>
     <content id="mycontent"></content>
   </template>
+  <script>
+    /**
+    * The `tooltip` attribute sets the text of a toltip.
+    *
+    * @attribute tooltip
+    * @type string
+    * @default 'Click to edit'
+    */
+
+    /**
+    * The `content-editable-changed` event is fired when the element is blurred.
+    *
+    * @event content-editable-changed
+    * @param {Object} detail
+    *   @param {string} detail.text Contains the changed inner content of the element.
+    */
+  </script>
   <script src="content-editable.js"></script>
 </polymer-element>
