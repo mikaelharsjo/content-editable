@@ -1,8 +1,8 @@
 {
   "name": "content-editable",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "authors": [
-    "Anonymous <anonymous@example.com>"
+    "Mikael Härsjö <mikaelharsjo@gmail.com>"
   ],
   "description": "Custom element making children editable and triggers save event on blur.",
   "keywords": [
