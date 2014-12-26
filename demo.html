@@ -38,7 +38,7 @@
 
 <script>
   var container = document.querySelector('#container');
-  container.addEventListener('save', function(e) {
+  container.addEventListener('content-editable-changed', function(e) {
     console.log('Save: ' + e.detail.text);
   });
 </script>
