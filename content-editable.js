@@ -13,7 +13,13 @@ Polymer({
     var nodes = this.$.editable.children, text;
     if (nodes.length > 0) {
       text = this.$.editable.children[0].innerHTML;
-      this.fire('content-editable-changed', { text: text });
+      var detail = {
+        text: text
+      };
+      if (this.propertyname) {
+        detail.propertyName = this.propertyname;
+      }
+      this.fire('content-editable-changed', detail);
     }
   }
 });
