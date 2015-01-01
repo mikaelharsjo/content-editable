@@ -28,11 +28,11 @@
 
     suite('<content-editable>', function () {
       document.addEventListener('polymer-ready', function () {
-        var p = editableP.shadowRoot.querySelector('p').parentNode;
-        var a = editableA.shadowRoot.querySelector('a').parentNode;
+        var pParent = editableP.shadowRoot.querySelector('p').parentNode;
+        var aParent = editableA.shadowRoot.querySelector('a').parentNode;
 
         test('wraps element in div and adds contenteditable', function () {
-          assert.equal(p.getAttribute('contenteditable'), 'true');
+          assert.equal(pParent.getAttribute('contenteditable'), 'true');
         });
 
         test('fires changed event on blur', function (done) {
@@ -41,17 +41,17 @@
             done();
           });
 
-          p.focus();
-          p.blur();
+          pParent.focus();
+          pParent.blur();
         });
 
         suite('tooltip', function () {
           test('add with default text', function () {
-            assert.equal(p.getAttribute('title'), 'Click to edit');
+            assert.equal(pParent.getAttribute('title'), 'Click to edit');
           });
 
           test('add from tooltip attribute', function () {
-            assert.equal(a.getAttribute('title'), 'I am editable');
+            assert.equal(aParent.getAttribute('title'), 'I am editable');
           });
         });
 
