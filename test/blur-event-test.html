@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <title>seed-element</title>
+
+  <script src="../../web-component-tester/browser.js"></script>
+
+  <link rel="import" href="../content-editable.html">
+</head>
+<body>
+
+  <div id="container">
+    <content-editable id="editable-p">
+      <p>inside paragraph</p>
+    </content-editable>
+  </div>
+
+  <script>
+    var container = document.querySelector('#container');
+    var editableP = document.querySelector('#editable-p');
+
+      document.addEventListener('polymer-ready', function () {
+        var pParent = editableP.shadowRoot.querySelector('p').parentNode;
+
+        test('fires changed event on blur', function (done) {
+          container.addEventListener('content-editable-changed', function (event) {
+            assert.equal(event.detail.text, 'inside paragraph');
+            done();
+          });
+
+          pParent.focus();
+          pParent.blur();
+        });
+    });
+  </script>
+
+</body>
+</html>

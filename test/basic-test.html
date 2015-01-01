@@ -11,18 +11,15 @@
 </head>
 <body>
 
-  <div id="container">
-    <content-editable id="editable-p">
-      <p>inside paragraph</p>
-    </content-editable>
-  </div>
+  <content-editable id="editable-p">
+    <p>inside paragraph</p>
+  </content-editable>
 
   <content-editable id="editable-a" tooltip="I am editable">
     <a>a link</a>
   </content-editable>
 
   <script>
-    var container = document.querySelector('#container');
     var editableP = document.querySelector('#editable-p');
     var editableA = document.querySelector('#editable-a');
 
@@ -32,17 +29,7 @@
         var aParent = editableA.shadowRoot.querySelector('a').parentNode;
 
         test('wraps element in div and adds contenteditable', function () {
-          assert.equal(pParent.getAttribute('contenteditable'), 'true');
-        });
-
-        test('fires changed event on blur', function (done) {
-          container.addEventListener('content-editable-changed', function (event) {
-            assert.equal(event.detail.text, 'inside paragraph');
-            done();
-          });
-
-          pParent.focus();
-          pParent.blur();
+          assert.equal(aParent.getAttribute('contenteditable'), 'true');
         });
 
         suite('tooltip', function () {
