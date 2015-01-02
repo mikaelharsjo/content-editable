@@ -1,0 +1,7 @@
+{
+  "name": "content-editable#gh-pages",
+  "private": true,
+  "dependencies": {
+    "content-editable": "mikaelharsjo/content-editable#master"
+  }
+}

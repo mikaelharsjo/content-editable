@@ -1,0 +1,36 @@
+{
+  "name": "content-editable",
+  "authors": [
+    "Mikael Härsjö <mikaelharsjo@gmail.com>"
+  ],
+  "description": "Custom element making children editable and triggers save event on blur.",
+  "keywords": [
+    "web-component",
+    "web-components",
+    "polymer",
+    "seed"
+  ],
+  "main": "content-editable.html",
+  "license": "MIT",
+  "homepage": "https://github.com/mikaelhars/content-editable/",
+  "ignore": [
+    "/.*",
+    "/tests/"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#^0.5.1"
+  },
+  "devDependencies": {
+    "web-component-tester": "Polymer/web-component-tester#^2.0.0-rc1"
+  },
+  "_release": "cc4a2ce260",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "cc4a2ce260f29d9fc316aa1bc5f3a8687fd69120"
+  },
+  "_source": "git://github.com/mikaelharsjo/content-editable.git",
+  "_target": "master",
+  "_originalSource": "mikaelharsjo/content-editable",
+  "_direct": true
+}

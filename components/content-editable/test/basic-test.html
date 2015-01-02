@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <title>seed-element</title>
+
+  <script src="../../web-component-tester/browser.js"></script>
+
+  <link rel="import" href="../content-editable.html">
+</head>
+<body>
+
+  <content-editable id="editable-p">
+    <p>inside paragraph</p>
+  </content-editable>
+
+  <content-editable id="editable-a" tooltip="I am editable">
+    <a>a link</a>
+  </content-editable>
+
+  <script>
+    var editableP = document.querySelector('#editable-p');
+    var editableA = document.querySelector('#editable-a');
+
+    suite('<content-editable>', function () {
+      document.addEventListener('polymer-ready', function () {
+        var pParent = editableP.shadowRoot.querySelector('p').parentNode;
+        var aParent = editableA.shadowRoot.querySelector('a').parentNode;
+
+        test('wraps element in div and adds contenteditable', function () {
+          assert.equal(aParent.getAttribute('contenteditable'), 'true');
+        });
+
+        suite('tooltip', function () {
+          test('add with default text', function () {
+            assert.equal(pParent.getAttribute('title'), 'Click to edit');
+          });
+
+          test('add from tooltip attribute', function () {
+            assert.equal(aParent.getAttribute('title'), 'I am editable');
+          });
+        });
+
+      });
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <title>content-editable Demo</title>
+
+  <script src="../webcomponentsjs/webcomponents.min.js"></script>
+  <link rel="import" href="content-editable.html">
+
+</head>
+<body unresolved>
+
+  <p>An example of using <code>&lt;content-editable&gt;</code>:</p>
+
+  <div id="container">
+
+  <content-editable>
+    <h1>I'm an editable text!</h1>
+  </content-editable>
+  <content-editable>
+    <span>I'm a span that's also editable</span>
+  </content-editable>
+
+  <content-editable><a>I'm a link</a></content-editable>
+
+  <content-editable>
+    <p>
+      An editable paragraph of text.
+    </p>
+  </content-editable>
+
+  <content-editable>
+    <div style="border: solid 1px #e0e0e0;">
+      An div with text inside.
+    </div>
+  </content-editable>
+</div>
+
+<script>
+  var container = document.querySelector('#container');
+  container.addEventListener('content-editable-changed', function(e) {
+    console.log('Save: ' + e.detail.text);
+  });
+</script>
+
+</body>
+</html>
