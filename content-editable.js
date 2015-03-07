@@ -1,5 +1,5 @@
 Polymer({
-  tooltip: 'Click to edit',
+  tooltip: '',
   ready: function() { //attached?
     var root = this.$;
     // move content from light dom to shadow root
