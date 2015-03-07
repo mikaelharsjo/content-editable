@@ -1,5 +1,3 @@
 :host .node:hover {
- cursor: pointer;
- background-color: #fffde7;
- outline: dotted 1px #fff176;
+  cursor: pointer;
 }
