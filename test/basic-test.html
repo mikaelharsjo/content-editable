@@ -33,8 +33,8 @@
         });
 
         suite('tooltip', function () {
-          test('add with default text', function () {
-            assert.equal(pParent.getAttribute('title'), 'Click to edit');
+          test('add with no text', function () {
+            assert.equal(pParent.getAttribute('title'), '');
           });
 
           test('add from tooltip attribute', function () {
