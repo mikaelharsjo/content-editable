@@ -15,7 +15,7 @@ Element making children editable and triggers save event on blur.
 <polymer-element name="content-editable" attributes="tooltip propertyname">
   <template>
     <link rel="stylesheet" href="content-editable.css">
-    <div title="{{tooltip}}" contenteditable="true" on-blur="{{blur}}" id="editable"></div>
+    <span title="{{tooltip}}" contenteditable="true" on-blur="{{blur}}" id="editable"></span>
     <content id="mycontent"></content>
   </template>
   <script>
